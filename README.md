@@ -39,6 +39,14 @@ To start your journey with Nurture Nest, simply sign up on our platform and expl
 - Siddharth Kesharwani ([@Siddharth Kesharwani](https://github.com/CodesavvySiddharth))
 - Vanshita ([@vanshita](https://github.com/TechWhizVanshita))
 
+## Tech-stack used:
+- HTML5, CSS3, Javascript
+- Node.js
+- Express.js
+- MongoDB
+- Firebase
+- Artficial intelligence 
+
 ## HACKJNU 3.O
 
 This project is part of the HACKJNU 3.O Hackathon, contributing towards the goals of Sustainable Development Goal 3 (SDG-3) - "Good Health and Well-being."
