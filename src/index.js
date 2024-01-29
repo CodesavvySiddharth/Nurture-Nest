@@ -2,6 +2,17 @@ const express = require("express");
 const path = require("path");
 const nodemailer = require('nodemailer'); // Import nodemailer module
 const app = express();
+
+app.use(cors({
+
+  origin:[],
+  methods:["POST","GET"],
+  credentials: true
+
+}));
+
+
+
 const hbs = require("hbs");
 const Appointment = require("./models/appointment");
 require("./db/conn");
