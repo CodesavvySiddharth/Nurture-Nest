@@ -1,18 +1,7 @@
 const express = require("express");
 const path = require("path");
-const nodemailer = require('nodemailer'); // Import nodemailer module
+const nodemailer = require("nodemailer");
 const app = express();
-
-app.use(cors({
-
-  origin:[],
-  methods:["POST","GET"],
-  credentials: true
-
-}));
-
-
-
 const hbs = require("hbs");
 const Appointment = require("./models/appointment");
 require("./db/conn");
@@ -21,7 +10,7 @@ const port = process.env.PORT || 3001;
 const static_path = path.join(__dirname, "../public");
 const views_path = path.join(__dirname, "../templates/views");
 const partials_path = path.join(__dirname, "../templates/partials");
-const baseUrl = "/NurtureNest";
+const baseUrl = "/Bloom_Together";
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -33,16 +22,23 @@ app.set("views", views_path);
 hbs.registerPartials(partials_path);
 
 app.get(`${baseUrl}/`, (req, res) => {
+    res.render("main");
+});
+
+app.get(`${baseUrl}/women`, (req, res) => {
     res.render("index");
+});
+
+app.get(`${baseUrl}/lgbtq`, (req, res) => {
+    res.render("Lindex");
 });
 
 app.post(`${baseUrl}/appointment`, async (req, res) => {
     try {
-        const { name,number,email,time,messages} = req.body;
+        const { name, number, email, time, messages, source } = req.body;
 
-        // Validate email and password here
         if (!number || !email) {
-            return res.status(400).send("number and email is required");
+            return res.status(400).send("Number and email are required");
         }
 
         const AppointmentEmployee = new Appointment({
@@ -53,47 +49,51 @@ app.post(`${baseUrl}/appointment`, async (req, res) => {
             messages,
         });
 
-        const registered =await AppointmentEmployee.save();
-        res.status(201).render("index");
+        await AppointmentEmployee.save();
+
+        // Render appropriate page based on `source`
+        if (source === "Lindex") {
+            res.status(201).render("Lindex");
+        } else {
+            res.status(201).render("index");
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Internal Server Error");
     }
- catch (error) {
-    console.error(error);
-    res.status(500).send("Internal Server Error");
-}
 });
 
-// Route for handling subscription requests
-app.post('/subscribe', (req, res) => {
+// Subscription Route
+app.post(`${baseUrl}/subscribe`, (req, res) => {
     const { email } = req.body;
 
-    // Send confirmation email
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user:  '', // Your Gmail address
-        pass: '' // Your Gmail password
-      }
+        service: "gmail",
+        auth: {
+            user: "", // Your Gmail address
+            pass: "", // Your Gmail password
+        },
     });
 
     const mailOptions = {
-      from: '',
-      to: email,
-      subject: 'Subscription Confirmation',
-      text: 'Thank you for subscribing to our newsletter!'
+        from: "",
+        to: email,
+        subject: "Subscription Confirmation",
+        text: "Thank you for subscribing to our newsletter!",
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        console.error('Error:', error);
-        res.status(500).send('Error sending confirmation email');
-      } else {
-        console.log('Email sent:', info.response);
-        res.sendStatus(200); // Subscription successful
-      }
+        if (error) {
+            console.error("Error:", error);
+            res.status(500).send("Error sending confirmation email");
+        } else {
+            console.log("Email sent:", info.response);
+            res.sendStatus(200);
+        }
     });
 });
 
-// Server listen
+// Start Server
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}${baseUrl}`);
 });

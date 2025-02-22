@@ -1,288 +1,334 @@
-  <!--==================== FEATURED ====================-->
+   <!--==================== FEATURED ====================-->
     <section class="featured section" id="featured">
-      <h2 class="section__title">Resources</h2>
+        <h2 class="section__title">Resources</h2>
+  
+        <div class="featured__container container">
+        
+          <div class="featured__swiper swiper">
+            <div class="swiper-wrapper">
+              <article class="featured__card swiper-slide">
+                <img
+                  src="img/book1-img.jpg"
+                  alt="image"
+                  class="featured__img"
+                />
+  
+                <h2 class="featured__title">What and When</h2>
+                <div class="featured__prices">
+                  <span class="featured__discount">The All in-one-Guide </span>
+                </div>
+  
+                 <!-- Add an event listener to the button -->
+  <button class="button" id="readpdf1">Read Me</button>
+  
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          // Find the button by its ID
+          var readPdfButton = document.getElementById('readpdf1');
+  
+          // Attach click event listener to the button
+          readPdfButton.addEventListener('click', function() {
+              // Replace 'path_to_your_pdf_file.pdf' with the actual path to your PDF file
+              var pdfUrl = 'PDFs/ww.pdf';
+  
+              // Open PDF in a new window
+              window.open(pdfUrl, '_blank');
+          });
+      });
+  </script>
+  
+                <div class="featured__actions">
+                  <button><i class="ri-search-line"></i></button>
+                  <button><i class="ri-heart-3-line"></i></button>
+                  <button><i class="ri-eye-line"></i></button>
+                </div>
+              </article>
+  
+              <article class="featured__card swiper-slide">
+                <img
+                  src="img/book2-img.jpg"
+                  alt="image"
+                  class="featured__img"
+                />
+  
+                <h2 class="featured__title">The No-Cry</h2>
+                <div class="featured__prices">
+                  <span class="featured__discount">Baby Sleeping Solution</span>
+                </div>
 
-      <div class="featured__container container">
-      
-        <div class="featured__swiper swiper">
-          <div class="swiper-wrapper">
-            <article class="featured__card swiper-slide">
-              <img
-                src="img/book1-img.jpg"
-                alt="image"
-                class="featured__img"
-              />
-
-              <h2 class="featured__title">What and When</h2>
-              <div class="featured__prices">
-                <span class="featured__discount">The All in-one-Guide </span>
-              </div>
-
-               <!-- Add an event listener to the button -->
-<button class="button" id="readpdf1">Read Me</button>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Find the button by its ID
-        var readPdfButton = document.getElementById('readpdf1');
-
-        // Attach click event listener to the button
-        readPdfButton.addEventListener('click', function() {
-            // Replace 'path_to_your_pdf_file.pdf' with the actual path to your PDF file
-            var pdfUrl = 'PDFs/ww.pdf';
-
-            // Open PDF in a new window
-            window.open(pdfUrl, '_blank');
-        });
-    });
-</script>
-
-              <div class="featured__actions">
-                <button><i class="ri-search-line"></i></button>
-                <button><i class="ri-heart-3-line"></i></button>
-                <button><i class="ri-eye-line"></i></button>
-              </div>
-            </article>
-
-            <article class="featured__card swiper-slide">
-              <img
-                src="img/book2-img.jpg"
-                alt="image"
-                class="featured__img"
-              />
-
-              <h2 class="featured__title">The No-Cry</h2>
-              <div class="featured__prices">
-                <span class="featured__discount">Baby Sleeping Solution</span>
-              </div>
-
-       
-               <!-- Add an event listener to the button -->
-    <button class="button" id="readpdf2">Read Me</button>
-</article>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Find the button by its ID
-        var readPdfButton = document.getElementById('readpdf2');
-
-        // Attach click event listener to the button
-        readPdfButton.addEventListener('click', function() {
-            // Replace 'path_to_your_pdf_file.pdf' with the actual path to your PDF file
-            var pdfUrl = 'PDFs/The_no_Cry_Sleep_Solution_pdf_compressed.pdf';
-
-            // Open PDF in a new window
-            window.open(pdfUrl, '_blank');
-        });
-    });
-</script>
-              <div class="featured__actions">
-                <button><i class="ri-search-line"></i></button>
-                <button><i class="ri-heart-3-line"></i></button>
-                <button><i class="ri-eye-line"></i></button>
-              </div>
-            </article>
-
-            <article class="featured__card swiper-slide">
-              <img
-                src="img/book3-img.jpg"
-                alt="image"
-                class="featured__img"
-              />
-
-              <h2 class="featured__title">Cribsheet</h2>
-              <div class="featured__prices">
-                <span class="featured__discount">A Data-Drive Guide</span>
-              </div>
-
-              <button class="button" id="readpdf3">Read Me</button>
-              <div class="featured__actions">
-                <button><i class="ri-search-line"></i></button>
-                <button><i class="ri-heart-3-line"></i></button>
-                <button><i class="ri-eye-line"></i></button>
-              </div>
-            </article>
-
-            <article class="featured__card swiper-slide">
-              <img
-                src="img/book4-img.jpg"
-                alt="image"
-                class="featured__img"
-              />
-
-              <h2 class="featured__title">The Happiest Baby</h2>
-              <div class="featured__prices">
-                <span class="featured__discount">The New Way to Calm Crying</span>
+                <div class="featured__actions">
+                  <button><i class="ri-search-line"></i></button>
+                  <button><i class="ri-heart-3-line"></i></button>
+                  <button><i class="ri-eye-line"></i></button>
+                </div>
                 
-              </div>
+         
+                 <!-- Add an event listener to the button -->
+      <button class="button" id="readpdf2">Read Me</button>
+  </article>
+  
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          // Find the button by its ID
+          var readPdfButton = document.getElementById('readpdf2');
+  
+          // Attach click event listener to the button
+          readPdfButton.addEventListener('click', function() {
+              // Replace 'path_to_your_pdf_file.pdf' with the actual path to your PDF file
+              var pdfUrl = 'PDFs/The_no_Cry_Sleep_Solution_pdf_compressed.pdf';
+  
+              // Open PDF in a new window
+              window.open(pdfUrl, '_blank');
+          });
+      });
+  </script>
 
-              <button class="button" id="readpdf4">Read Me</button>
-              <div class="featured__actions">
-                <button><i class="ri-search-line"></i></button>
-                <button><i class="ri-heart-3-line"></i></button>
-                <button><i class="ri-eye-line"></i></button>
+              
+              </article>
+  
+              <article class="featured__card swiper-slide">
+                <img
+                  src="img/book3-img.jpg"
+                  alt="image"
+                  class="featured__img"
+                />
+  
+                <h2 class="featured__title">Cribsheet</h2>
+                <div class="featured__prices">
+                  <span class="featured__discount">A Data-Drive Guide</span>
+                </div>
+  
+                <button class="button" id="readpdf3">Read Me</button>
+                <div class="featured__actions">
+                  <button><i class="ri-search-line"></i></button>
+                  <button><i class="ri-heart-3-line"></i></button>
+                  <button><i class="ri-eye-line"></i></button>
+                </div>
+              </article>
+  
+              <article class="featured__card swiper-slide">
+                <img
+                  src="img/book4-img.jpg"
+                  alt="image"
+                  class="featured__img"
+                />
+  
+                <h2 class="featured__title">The Happiest Baby</h2>
+                <div class="featured__prices">
+                  <span class="featured__discount">The New Way to Calm Crying</span>
+                  
+                </div>
+  
+                <button class="button" id="readpdf4">Read Me</button>
+                <div class="featured__actions">
+                  <button><i class="ri-search-line"></i></button>
+                  <button><i class="ri-heart-3-line"></i></button>
+                  <button><i class="ri-eye-line"></i></button>
+                </div>
+              </article>
+            </div>
+  
+            <div class="swiper-button-prev">
+              <i class="ri-arrow-left-s-line"></i>
+            </div>
+            <div class="swiper-button-next">
+              <i class="ri-arrow-right-s-line"></i>
+            </div>
+          </div>
+        </div>
+  
+  
+  <div class="featured__container container">
+      <h3 class="section__title">Recipes</h3>
+      <div class="testimonial__container container">
+        <div class="testimonial__swiper swiper">
+          <div class="swiper-wrapper">
+  
+            <article class="testimonial__card swiper-slide">
+              <img
+                src="img/recipe-img-01.jpg"
+                alt="image"
+                class="testimonial__img"
+              />
+  
+              <h2 class="testimonial__title">Grilled Chicken with Farro & Roasted
+                Cauliflower</h2>
+              <p class="testimonial__description">
+                Serve the chicken over the farro and vegetables. Sprinkle with
+                mint and pine nuts. Serve with lemon wedges, if desired.
+              </p>
+  
+              <div class="testimonial__stars">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-half-fill"></i>
               </div>
             </article>
-          </div>
-
-          <div class="swiper-button-prev">
-            <i class="ri-arrow-left-s-line"></i>
-          </div>
-          <div class="swiper-button-next">
-            <i class="ri-arrow-right-s-line"></i>
+  
+            <article class="testimonial__card swiper-slide">
+              <img
+                src="img/recipe2.jpg"
+                alt="image"
+                class="testimonial__img"
+              />
+  
+              <h2 class="testimonial__title">Grilled Chicken with Farro & Roasted
+                Cauliflower</h2>
+              <p class="testimonial__description">
+                Serve the chicken over the farro and vegetables. Sprinkle with
+                mint and pine nuts. Serve with lemon wedges, if desired.
+              </p>
+  
+              <div class="testimonial__stars">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-half-fill"></i>
+              </div>
+            </article>
+  
+            <article class="testimonial__card swiper-slide">
+              <img
+                src="img/recipe3.jpg"
+                alt="image"
+                class="testimonial__img"
+              />
+  
+              <h2 class="testimonial__title">Grilled Chicken with Farro & Roasted
+                Cauliflower</h2>
+              <p class="testimonial__description">
+                Serve the chicken over the farro and vegetables. Sprinkle with
+                mint and pine nuts. Serve with lemon wedges, if desired.
+              </p>
+  
+              <div class="testimonial__stars">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-half-fill"></i>
+              </div>
+            </article>
+  
+            <article class="testimonial__card swiper-slide">
+              <img
+                src="img/recipe4.jpg"
+                alt="image"
+                class="testimonial__img"
+              />
+  
+              <h2 class="testimonial__title">Grilled Chicken with Farro & Roasted
+                Cauliflower</h2>
+              <p class="testimonial__description">
+                Serve the chicken over the farro and vegetables. Sprinkle with
+                mint and pine nuts. Serve with lemon wedges, if desired.
+              </p>
+  
+              <div class="testimonial__stars">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-half-fill"></i>
+              </div>
+            </article>
+  
+            
+            <article class="testimonial__card swiper-slide">
+              <img
+                src="img/recipe5.jpg"
+                alt="image"
+                class="testimonial__img"
+              />
+  
+              <h2 class="testimonial__title">Grilled Chicken with Farro & Roasted
+                Cauliflower</h2>
+              <p class="testimonial__description">
+                Serve the chicken over the farro and vegetables. Sprinkle with
+                mint and pine nuts. Serve with lemon wedges, if desired.
+              </p>
+  
+              <div class="testimonial__stars">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-half-fill"></i>
+              </div>
+            </article>
+  
           </div>
         </div>
       </div>
-
-
-<div class="featured__container container">
-    <h3 class="section__title">Recipes</h3>
+      <br /><br />
+      <br /><br />
+    </div>
+  
+  </div>
+  <div class="video__container container">
+    <h3 class="section__title">Pregnancy Pain Videos</h3>
     <div class="testimonial__container container">
       <div class="testimonial__swiper swiper">
         <div class="swiper-wrapper">
-
-          <article class="testimonial__card swiper-slide">
-            <img
-              src="img/recipe-img-01.jpg"
-              alt="image"
-              class="testimonial__img"
-            />
-
-            <h2 class="testimonial__title">Grilled Chicken with Farro & Roasted
-              Cauliflower</h2>
-            <p class="testimonial__description">
-              Serve the chicken over the farro and vegetables. Sprinkle with
-              mint and pine nuts. Serve with lemon wedges, if desired.
+  
+          <article class="video__card swiper-slide">
+            <iframe class="video__iframe" src="https://www.youtube.com/embed/ATsZ5O_6VFs"
+              title="Pregnancy Pain Relief 1" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+  
+            <h2 class="video__title">Pregnancy Pain Relief 1</h2>
+            <p class="video__description">
+              Learn effective ways to relieve common pregnancy pains and stay comfortable.
             </p>
-
-            <div class="testimonial__stars">
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-half-fill"></i>
-            </div>
+            <a href="https://www.youtube.com/watch?v=ATsZ5O_6VFs" target="_blank" class="video__link">Watch Video</a>
           </article>
-
-          <article class="testimonial__card swiper-slide">
-            <img
-              src="img/recipe2.jpg"
-              alt="image"
-              class="testimonial__img"
-            />
-
-            <h2 class="testimonial__title">Grilled Chicken with Farro & Roasted
-              Cauliflower</h2>
-            <p class="testimonial__description">
-              Serve the chicken over the farro and vegetables. Sprinkle with
-              mint and pine nuts. Serve with lemon wedges, if desired.
+  
+          <article class="video__card swiper-slide">
+            <iframe class="video__iframe" src="https://www.youtube.com/embed/dt4PbyVy8Bg"
+              title="Pregnancy Pain Relief 2" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+  
+            <h2 class="video__title">Pregnancy Pain Relief 2</h2>
+            <p class="video__description">
+              More techniques to ease body discomfort during pregnancy.
             </p>
-
-            <div class="testimonial__stars">
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-half-fill"></i>
-            </div>
+            <a href="https://www.youtube.com/watch?v=dt4PbyVy8Bg" target="_blank" class="video__link">Watch Video</a>
           </article>
-
-          <article class="testimonial__card swiper-slide">
-            <img
-              src="img/recipe3.jpg"
-              alt="image"
-              class="testimonial__img"
-            />
-
-            <h2 class="testimonial__title">Grilled Chicken with Farro & Roasted
-              Cauliflower</h2>
-            <p class="testimonial__description">
-              Serve the chicken over the farro and vegetables. Sprinkle with
-              mint and pine nuts. Serve with lemon wedges, if desired.
+  
+          <article class="video__card swiper-slide">
+            <iframe class="video__iframe" src="https://www.youtube.com/embed/l-7CHaNdn20"
+              title="Pregnancy Pain Relief 3" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+  
+            <h2 class="video__title">Pregnancy Pain Relief 3</h2>
+            <p class="video__description">
+              Quick tips and stretches to ease back and hip pain.
             </p>
-
-            <div class="testimonial__stars">
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-half-fill"></i>
-            </div>
+            <a href="https://www.youtube.com/watch?v=l-7CHaNdn20" target="_blank" class="video__link">Watch Video</a>
           </article>
-
-          <article class="testimonial__card swiper-slide">
-            <img
-              src="img/recipe4.jpg"
-              alt="image"
-              class="testimonial__img"
-            />
-
-            <h2 class="testimonial__title">Grilled Chicken with Farro & Roasted
-              Cauliflower</h2>
-            <p class="testimonial__description">
-              Serve the chicken over the farro and vegetables. Sprinkle with
-              mint and pine nuts. Serve with lemon wedges, if desired.
+  
+          <article class="video__card swiper-slide">
+            <iframe class="video__iframe" src="https://www.youtube.com/embed/S3xXurLpfDk"
+              title="Pregnancy Pain Relief 4" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+  
+            <h2 class="video__title">Pregnancy Pain Relief 4</h2>
+            <p class="video__description">
+              Discover natural remedies to alleviate pregnancy discomfort.
             </p>
-
-            <div class="testimonial__stars">
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-half-fill"></i>
-            </div>
+            <a href="https://www.youtube.com/watch?v=S3xXurLpfDk" target="_blank" class="video__link">Watch Video</a>
           </article>
-
-          
-          <article class="testimonial__card swiper-slide">
-            <img
-              src="img/recipe5.jpg"
-              alt="image"
-              class="testimonial__img"
-            />
-
-            <h2 class="testimonial__title">Grilled Chicken with Farro & Roasted
-              Cauliflower</h2>
-            <p class="testimonial__description">
-              Serve the chicken over the farro and vegetables. Sprinkle with
-              mint and pine nuts. Serve with lemon wedges, if desired.
-            </p>
-
-            <div class="testimonial__stars">
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-half-fill"></i>
-            </div>
-          </article>
-
+  
         </div>
       </div>
     </div>
-    <br /><br />
-    <br /><br />
   </div>
-
-
-
-
-</div>
-
-
-
-{{!-- 
-<div class="featured__container container">
-<h3>Videos</h3> --}}
-
-
-
-
-</div>
-
-
-
-
-
-
-    </section>
+  
+ 

@@ -1,11 +1,6 @@
+require('dotenv').config();
 const mongoose = require("mongoose");
 
-const connectionStr = 'mongodb://localhost:27017/NurtureNest'; // Replace with your actual connection string
-
-mongoose.connect(connectionStr)
-  .then(() => {
-    console.log("Connection successful");
-  })
-  .catch((error) => {
-    console.error("Error connecting to MongoDB:", error);
-  });
+mongoose.connect(process.env.MONGO_URI)
+    .then(() => console.log("Connected to MongoDB Atlas"))
+    .catch((error) => console.error("Error connecting to MongoDB Atlas:", error));

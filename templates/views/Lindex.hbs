@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="public\img\WhatsApp Image 2025-02-22 at 03.57.21.png" type="image/x-icon" />
+
+    <!--=============== REMIXICONS ===============-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css"
+    />
+
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="css/Lstyles.css" />
+
+    <title>Bloom Together</title>
+  </head>
+</html>
+<body>
+
+
+  {{>header}}
+
+
+
+
+
+  <!--==================== SEARCH ====================-->
+  <div class="search" id="search-content">
+    <form action="" class="search__form">
+      <i class="ri-search-line search__icon"></i>
+      <input
+        type="search"
+        placeholder="What are you looking for?"
+        class="search__input"
+      />
+    </form>
+
+    <i class="ri-close-line search__close" id="search-close"></i>
+  </div>
+
+
+
+
+
+
+ <!--==================== LOGIN ====================-->
+ <div class="login grid" id="login-content">
+  <form class="login__form grid" >
+    <img src="" alt="">
+    <h3 class="login__title">Log In</h3>
+<div class="login__group grid">
+  <div>
+    <label for="login-email" class="login__label">Email</label>
+  <input type="email" placeholder="Write your email" name="email" id="login-email" class="login__input" autocomplete="email" required />
+
+  </div>
+
+  <div>
+    <label for="login-pass" class="login__label">Password</label>
+  <input type="password" placeholder="Enter your password" name="password" id="login-password" class="login__input" autocomplete="current-password" required />
+
+  </div>
+</div>
+
+    
+     <span class="login__signup">
+        You do not have an account? <a href="#" onclick="showRegisterForm()">Register</a>
+      </span>
+
+      <a href="#" class="login__forgot"> You forgot your password </a>
+
+      <button type="button" id="lsubmitdata" name="lsubmitdata" class="login__button button">Log In</button>
+
+  </form>
+
+  <i class="ri-close-line login__close" id="login-close"></i>
+</div>
+<!--=============== REGISTER ===============-->
+
+<div class="register grid" id="register-content">
+  <form class="login__form grid">
+    <h3 class="register__title">Register</h3>
+<div class="register__group grid">
+  <div>
+
+    <div>
+      <label for="register-user" class="register__label">Username</label>
+      <input
+        type="text" 
+        placeholder="Enter your username"
+        name="rusername"
+        class="register__input"
+        id="rusername"
+        required
+      />
+    </div>
+
+    <label for="register-email" class="register__label">Email</label>
+  <input type="email" placeholder="Write your email" name="remail" class="register__input" id="register-email" autocomplete="email" required />
+
+  </div>
+
+  <div>
+    <label for="register-pass" class="register__label">Password</label>
+<input type="password" placeholder="Enter your password" name="rpassword" class="register__input" id="register-password" autocomplete="new-password" required />
+
+  </div>
+
+  
+ 
+</div>
+
+    
+     <span class="register__signup">
+        You have an account? <a href="#" onclick="showLoginForm()">Login</a>
+      </span>
+
+
+    <!--<a href="#" class="register__forgot"> You forgot your password </a>-->
+
+      <button type="button" id="submitdata" name="submitdata" class="register__button button">Register now</button>
+    
+  </form>
+
+
+</div>
+
+
+
+
+  
+  
+  <!--==================== MAIN ====================-->
+  <main class="main">
+ 
+
+   {{>Lhome}}
+
+   {{>services}}
+
+   {{>Lfeatures}}
+
+   {{>Lblogs}}
+
+   {{>Ltestimonial}}
+
+   {{>Lcontact}}
+
+   {{>join}}
+
+
+
+  </main>
+
+   {{>footer}}
+
+  <!--========== SCROLL UP ==========-->
+  <a href="#" class="scrollup" id="scroll-up">
+    <i class="ri-arrow-up-line"></i>
+  </a>
+  <!--=============== SCROLLREVEAL ===============-->
+  <script src="js/scrollreveal.min.js"></script>
+<!--================SWEET ALERTS=======================-->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!--=============== SWIPER JS ===============-->
+  <script src="js/swiper-bundle.min.js"></script>
+<!--=============== MAIN JS ===============-->
+<script src="js/main.js"></script>
+
+
+<!--=============== LOGIN_REGISTER FIREBASE ===============-->
+
+<script type="module">
+
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+import { getDatabase,set,ref,update} from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js"; 
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword,signOut } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+import { get } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
+
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyB6xSLR_XKinTiQQ8I4k_2PySuhqbZbWjI",
+    authDomain: "babybridges-5f622.firebaseapp.com",
+    databaseURL: "https://babybridges-5f622-default-rtdb.firebaseio.com",
+    projectId: "babybridges-5f622",
+    storageBucket: "babybridges-5f622.appspot.com",
+    messagingSenderId: "603750500663",
+    appId: "1:603750500663:web:362dd1c557aa55a6efb2b2"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth();
+  const database = getDatabase(app);
+
+  submitdata.addEventListener('click' , (e) => {
+
+       var REmail = document.getElementById("remail").value;
+       var RPassword = document.getElementById("rpassword").value;
+       var RUsername = document.getElementById("rusername").value;
+
+
+
+    createUserWithEmailAndPassword(auth, REmail, RPassword, RUsername)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          set(ref(database, 'users/' + user.uid),{
+            username : RUsername,
+            email : REmail,
+            password : RPassword
+          })
+
+             .then(()=>{
+
+              Swal.fire({
+            title: 'Registered Successful!',
+            icon: 'success',
+            confirmButtonText: 'OK'
+            }).then((result) => {
+          /* Read more about isConfirmed, isDenied below */
+          if (result.isConfirmed) {
+            window.location.reload();
+          }
+          });
+              //Data saved successfully
+             })
+             .catch((error)=>{
+              Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: "Something Went Wrong",
+                });
+             })
+
+
+          // document.getElementById("register-result").innerHTML = "Welcome<br>" + registerEmail + " was registered Successfully";
+          // document.getElementById("login-result").innerHTML = ""; // Clear login result
+        })
+        .catch((error) => {
+          const errorcode = error.code;
+         Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: "Invalid Registration Credentials",
+                });
+        });
+
+    });
+
+
+
+function toggleLoginElements(isLoggedIn) {
+  const loginForm = document.getElementById('login-content');
+  const logoutButton = document.getElementById('logout-button');
+  const loginIcon = document.getElementById('login-button');
+    const usernameDisplay = document.getElementById('username-display');
+
+
+  if (isLoggedIn) {
+    loginForm.style.display = 'none';
+    loginIcon.style.display = 'none';
+    logoutButton.style.display = 'block';
+
+      var userRef = ref(database, 'users/' + user.uid);
+      get(userRef).then((snapshot) => {
+        var userData = snapshot.val();
+        var username = userData ? userData.username : 'User';
+        usernameDisplay.textContent = 'Welcome, ' + username + '!';
+        usernameDisplay.style.display = 'block'; // Show the username display span
+      });
+      
+  }
+   else {
+    loginForm.style.display = 'grid';
+    loginIcon.style.display = 'grid';
+    logoutButton.style.display = 'none';
+    usernameDisplay.style.display = 'none'; 
+
+  }
+}
+
+
+let user = null;
+
+
+// Event listener for the login button
+lsubmitdata.addEventListener('click', (e) => {
+  console.log('Login button clicked');
+
+  var Email = document.getElementById('email').value; // Retrieve email value
+  var Password = document.getElementById('password').value; // Retrieve password value
+
+  signInWithEmailAndPassword(auth, Email, Password)
+    .then((userCredential) => {
+      user = userCredential.user; // Update the global user variable
+
+      var lgDate = new Date();
+      update(ref(database, 'user/' + user.uid), {
+        last_login: lgDate,
+      })
+        .then(() => {
+           Swal.fire({
+            title: 'Login Successful!',
+            icon: 'success',
+            confirmButtonText: 'OK'
+            })
+          toggleLoginElements(true); // Show logout button
+           localStorage.setItem('userLoggedIn', 'true');
+        })
+        .catch((error) => {
+          alert(error);
+        });
+    })
+    .catch((error) => {
+      const errorcode = error.code;
+      const errorMessage = error.message;
+
+       Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: "Invalid login Credentials",
+                });
+    });
+  // ... (Rest of the login logic)
+});
+
+// Event listener for the logout button
+const logoutButton = document.getElementById('logout-button');
+if (logoutButton) {
+  logoutButton.addEventListener('click', (e) => {
+    signOut(auth)
+      .then(() => {
+         Swal.fire({
+            title: 'Logout Successful!',
+            icon: 'success',
+            confirmButtonText: 'OK'
+            })
+        toggleLoginElements(false);
+         localStorage.removeItem('userLoggedIn');
+      })
+      .catch((error) => {
+        alert(error);
+      });
+  });
+}
+  // Check if the user was logged in before reloading the page
+  window.addEventListener('load', () => {
+    const userLoggedIn = localStorage.getItem('userLoggedIn');
+    if (userLoggedIn === 'true') {
+      // User was logged in, fetch user data and display elements accordingly
+      toggleLoginElements(true);
+
+    }
+  });
+
+    
+  </script>
+
+
+<!--=============== SCROLL UP ==========-->
+<a href="#" class="scrollup" id="scroll-up">
+  <i class="ri-arrow-up-line"></i>
+</a>
+
+<!--=============== CHAT-BOT ==========-->
+
+<script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2025/02/21/21/20250221215948-OBVRXBB4.js"></script>
+
+</body>
+</html>

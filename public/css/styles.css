@@ -7,13 +7,14 @@
 
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
-  --first-color: hsl(230, 62%, 56%);
-  --title-color: hsl(230, 70%, 16%);
-  --text-color: hsl(230, 16%, 45%);
-  --border-color: hsl(230, 50%, 90%);
+  --first-color: hwb(350 25% 3%);
+  --title-color: hsl(350, 93%, 24%);
+  --text-color: hsl(350, 59%, 45%);
+  --border-color: hsl(350, 80%, 85%);
   --white-color: hsl(0, 0%, 100%);
-  --body-color: hsl(230, 100%, 96%);
-  --container-color: hsl(230, 100%, 97%);
+  --body-color: hsl(350, 12%, 95%);
+  --container-color: hsl(350, 10%, 95%);
+
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -536,6 +537,7 @@ height: 35%;
   font-weight: var(--font-semi-bold);
   padding: 1rem 1.5rem;
   transition: box-shadow 0.4s;
+  border-radius: 50px;
 }
 
 .button:hover {
@@ -663,14 +665,16 @@ height: 35%;
   position: relative;
   text-align: center;
   background-color: var(--container-color);
-  padding: 2rem;
+  padding: 1.5rem;
   overflow: hidden;
   border: 2px solid var(--border-color);
   transition: border 0.4s, background-color 0.4s;
+  border-radius: 10px;
 }
 
 .featured__img {
   width: 150px;
+  height: 200px;
   margin: 0 auto 0.75rem;
 }
 
@@ -751,6 +755,161 @@ height: 35%;
   color: var(--first-color);
   transition: border 0.4s background-color 0.4s;
 }
+/*=============== VIDEO SECTION STYLING ===============*/
+.video__container {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.video__swiper {
+  width: 100%;
+  max-width: 1200px;
+  overflow: hidden;
+}
+
+/* Video Card */
+.video__card {
+  position: relative;
+  text-align: center;
+  background-color: var(--container-color);
+  padding: 1.5rem;
+  overflow: hidden;
+  border: 2px solid var(--border-color);
+  transition: border 0.4s, background-color 0.4s;
+  border-radius: 10px;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Video Frame */
+.video__iframe {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+}
+
+/* Video Title */
+.video__title {
+  font-size: var(--h2-font-size);
+  margin-bottom: 0.5rem;
+}
+
+/* Video Description */
+.video__description {
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+  text-align: center;
+  padding: 0 1rem;
+  flex-grow: 1;
+}
+
+/* Watch Video Button */
+.video__link {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: var(--first-color);
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.video__link:hover {
+  background-color: var(--first-color-dark);
+}
+
+/* Swiper Navigation */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: "";
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: initial;
+  height: initial;
+  background-color: var(--container-color);
+  border: 2px solid var(--border-color);
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  color: var(--first-color);
+  transition: border 0.4s background-color 0.4s;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .video__card {
+    width: 90%;
+    height: auto;
+  }
+
+  .video__iframe {
+    height: 150px;
+  }
+}
+
+
+.blog__card {
+  position: relative;
+  text-align: center;
+  background-color: var(--container-color);
+  padding: 1.5rem;
+  overflow: hidden;
+  border: 2px solid var(--border-color);
+  transition: border 0.4s, background-color 0.4s;
+  width: 300px; /* Fixed width */
+  height: 400px; /* Fixed height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.blog__img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.blog__title {
+  font-size: var(--h2-font-size);
+  margin: 0.5rem 0;
+}
+
+.blog__description {
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+  text-align: center;
+  padding: 0 1rem;
+  flex-grow: 1;
+}
+
+.blog__link {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: var(--first-color);
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.blog__link:hover {
+  background-color: var(--first-color-dark);
+}
+
+
+
 /*=============== JOIN ===============*/
 .join__container {
   position: relative;
@@ -795,6 +954,7 @@ height: 35%;
   padding-block: 1.25rem;
   cursor: pointer;
 }
+
 /*=============== TESTIMONIAL ===============*/
 .testimonial__card {
   text-align: center;
@@ -802,11 +962,14 @@ height: 35%;
   padding: 2rem 3rem 2.5rem;
   border: 2px solid var(--border-color);
   transition: border 0.4s, background-color 0.4s;
+  border-radius: 10px;
+  min-height: 340px;
 }
 
 .testimonial__img {
   width: 100px;
   border-radius: 50%;
+  height: 80px;
   margin: 0 auto 1.5rem;
 }
 
@@ -853,6 +1016,7 @@ height: 35%;
   margin: 1rem 0;
   color: var(--text-color);
   font-size: var(--font-medium);
+  border-radius: 20px;
 }
 
 
@@ -866,6 +1030,7 @@ height: 35%;
   background-color: var(--container-color);
   border: 2px solid var(--border-color);
   margin-bottom: 2rem;
+  border-radius: 20px;
 }
 
 contact form input[type="submit"]
@@ -1078,9 +1243,6 @@ contact form input[type="submit"]
 
 /* For large devices */
 @media screen and (min-width: 1150px){
-  .section{
-    padding-block: 7rem 2rem;
-  }
 
   .nav{
     height: calc(var(--header-height) + 2rem);
@@ -1199,7 +1361,6 @@ contact form input[type="submit"]
   .home__container{
     grid-template-columns: 435px 745px;
     align-items: center;
-    padding-block: 7rem 2rem;
   }
 
   .home__data{
