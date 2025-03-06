@@ -58,24 +58,27 @@
 
        
                <!-- Add an event listener to the button -->
-    <button class="button" id="readpdf2">Read Me</button>
-</article>
+    <button class="button" id="readpdf2">No-Cry</button>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Find the button by its ID
-        var readPdfButton = document.getElementById('readpdf2');
+   document.addEventListener('DOMContentLoaded', function() {
+    // Find the button by its ID
+    var readPdf2Button = document.getElementById('readpdf2');
 
-        // Attach click event listener to the button
-        readPdfButton.addEventListener('click', function() {
-            // Replace 'path_to_your_pdf_file.pdf' with the actual path to your PDF file
-            var pdfUrl = 'PDFs/The_no_Cry_Sleep_Solution_pdf_compressed.pdf';
+    // Attach click event listener to the button
+    readPdf2Button.addEventListener('click', function() {
+        // Debugging: Log to the console to check if the click event is triggered
+        console.log('Button clicked!');
 
-            // Open PDF in a new window
-            window.open(pdfUrl, '_blank');
-        });
+        // Replace 'path_to_your_pdf_file.pdf' with the actual path to your PDF file
+        var pdfUrl2 = 'PDFs/cry.pdf';
+
+        // Open PDF in a new window
+        window.open(pdfUrl2, '_blank');
     });
+});
 </script>
+
               <div class="featured__actions">
                 <button><i class="ri-search-line"></i></button>
                 <button><i class="ri-heart-3-line"></i></button>
